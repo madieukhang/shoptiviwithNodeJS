@@ -1,0 +1,491 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>Chào mừng bạn đến với cửa hàng Tivi</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+        crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<style>
+    .CHON {
+            border: 1px solid blue;
+            opacity: 0.5;
+        }
+    </style>
+
+<body>
+    <div class="container" id="Th_PET">
+    </div>
+
+
+    <div class="container">
+        <div class="container">
+            <div class="row rounded">
+                <div class="col-md-12">
+                    <div id="carouselId" class="carousel slide fixdislay" data-ride="carousel">
+                        <ol class="carousel-indicators">
+                            <li data-target="#carouselId" data-slide-to="0" class=""></li>
+                            <li data-target="#carouselId" data-slide-to="1" class="active"></li>
+                            <li data-target="#carouselId" data-slide-to="2" class=""></li>
+                            
+                        </ol>
+                        <div class="carousel-inner" role="listbox">
+                            <div class="carousel-item">
+                                <img src="http://localhost:1001/BANNER1.png" alt="First slide" width="100%"
+                                    height="80%">
+                                <div class="carousel-caption d-none d-md-block text">
+                                   
+                                    <!-- Banner1 -->
+                                                            
+                                </div>
+                            </div>
+                            <div class="carousel-item active">
+                                <img src="http://localhost:1001/BANNER4.png" alt="Second slide" width="100%"
+                                    height="60%">
+                                <div class="carousel-caption d-none d-md-block text">
+                                   
+                                     <!-- Banner2 -->
+                                </div>
+                            </div>
+                            <div class="carousel-item">
+                                <img src="http://localhost:1001/BANNER5.png" alt="Third slide" width="100%"
+                                    height="80%">
+                                <div class="carousel-caption d-none d-md-block text">
+                                   
+                                     <!-- Banner3 -->
+
+                                </div>
+                            </div>
+                            
+                        </div>
+                        <a class="carousel-control-prev" href="#carouselId" role="button" data-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="sr-only">Previous</span>
+                        </a>
+                        <a class="carousel-control-next" href="#carouselId" role="button" data-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="sr-only">Next</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-12 col-sm-12 col-md-12">
+
+                <div class="float-left">
+                    <button type="button" class="btn btn-lg btn-outline-danger" id="Th_Trang_chu">
+                        <i class="fa fa-home"></i>
+                        <button type="button" class="btn btn-lg btn-outline-danger" id="Th_Samsung">
+                            <i class="fa fa-tv"> Samsung</i>
+                        </button>
+                        <button type="button" class="btn btn-lg btn-outline-danger" id="Th_Sony">
+                            <i class="fa fa-tv"> Sony</i>
+                        </button>
+                        <button type="button" class="btn btn-lg btn-outline-danger" id="Th_LG">
+
+                            <i class="fa fa-tv"> LG</i>
+                        </button>
+                        <button type="button" class="btn btn-lg btn-outline-danger" id="Th_Khac">
+                            <i class="fa fa-tv"> Khác</i>
+                        </button>
+                        <button type="button" class="btn btn-outline" id="Th_Tang" onclick="Sap_Tang() ">
+                            <i class="fa fa-sort-alpha-asc"></i>
+                        </button>
+                        <button type="button" class="btn btn-outline" id="Th_Giam" onclick="Sap_Giam()">
+                            <i class="fa fa-sort-alpha-desc"></i>
+                        </button>
+                        <div class="btn">
+                            <select class="btn btn-outline-danger" onchange="Xuat_Ti_vi_theo_Don_gia(this.value)">
+                                <option value="0-60000000">Tìm Theo Giá Bán</option>
+                                <option value="0-10000000">
+                                    &lt; 10 triệu </option>
+                                <option value="10000000-20000000">&gt; 10 triệu và
+                                    &lt; 20 triệu </option>
+                                <option value="20000000-60000000">&gt; 20 triệu </option>
+                            </select>
+                        </div>
+
+
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <div class="container bg-danger">
+        <div class="btn btn-outline-danger btn-block-left text-white" id="Th_Thong_bao">
+            KHUNG THÔNG BÁO
+        </div>
+
+    </div>
+
+    <div class="mt-1">
+        <div id="Th_Phan_trang">Phân trang TOP</div>
+    </div>
+
+    <div class="container">
+        <fieldset class="btn">
+            <legend></legend>
+            <div class="row" style="margin: auto; width: 90%" id="Th_Cha"></div>
+        </fieldset>
+
+    </div>
+
+    <div class="mt-1">
+        <div id="Th_Phan_trang_B">Phân trang Bootom</div>
+    </div>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-12 col-sm-4 col-md-4 border border-while">
+                <H6>CỬA HÀNG TIVI AN KHANG</H6>
+                <div> Địa chỉ: 137E Nguyễn Chí Thanh, P9, Q5, TPHCM</div>
+                <div> Giờ làm việc: 8h- 20h30 Từ thứ 2 đến thứ 7 </div>
+                <div class="text-primary font-weight-bold">Hotline: (028) 38351056</div>
+            </div>
+            <div class="col-12 col-sm-4 col-md-4 border border-while text-center">
+                <button type="button" class="m-2 btn btn-lg btn-dark" id="Th_Lien_he">
+                    <i class="fa fa-envelope-square"></i>
+                    Liên hệ cửa hàng
+                </button>
+                <button type="button" class="m-2 btn btn-lg btn-dark" id="Th_Dia_diem">
+                    <i class="fa fa-map"></i>
+                    Địa điểm Cửa hàng
+                </button>
+            </div>
+            <div class="col-12 col-sm-4 col-md-4 border border-while text-center">
+                <button type="button" class="m-2 btn btn-lg btn-dark" id="Th_Tai_don">
+                    <i class="fa fa-download" aria-hidden="true"></i>
+                    Tải Đơn Tuyển dụng</button>
+                <button type="button" class="m-2 btn btn-lg btn-dark" id="Th_Nop_don">
+                    <i class="fa fa-address-book-o" aria-hidden="true"></i>
+                    Nộp Đơn Tuyển dụng
+                </button>
+            </div>
+        </div>
+
+
+    </div>
+    <!-- Button trigger modal -->
+    <button type="button" class="btn btn-primary btn-lg d-none" id="Th_Show" data-toggle="modal" data-target="#modelId">
+    </button>
+
+    <!-- Modal -->
+    <div class="modal fade" id="modelId" tabindex="-1" role="dialog" aria-labelledby="modelTitleId" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title text-danger" id="modelTitleId"></h4>
+                    <button type="button" id="Th_Close" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+
+                </div>
+                <div class="modal-body" id="Th_Chi_tiet">
+
+                </div>
+                <!-- <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Save</button>
+                </div> -->
+            </div>
+        </div>
+    </div>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+        crossorigin="anonymous"></script>
+    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAw3QZ5hhReTIJLSWz7o_582Wm3p6PV-EM&language=vi"></script>
+    <script src="../Xu_ly/Xu_ly_3L.js"></script>
+    <script>
+        var limit = 9
+        var Du_lieu = Doc_Danh_sach_Ti_vi();
+        var Danh_sach_Ti_vi = Du_lieu.Danh_sach_Ti_vi
+        var Cong_ty = Du_lieu.Cong_ty
+        var map
+        var geocoder = new google.maps.Geocoder();
+        Xuat_Thong_tin_Cong_ty(Cong_ty, Th_PET)
+
+        if (Danh_sach_Ti_vi.length > 0) {
+            Xuat_Danh_sach_Phan_trang(Danh_sach_Ti_vi, Th_Thong_bao, 0, limit)
+            if (Danh_sach_Ti_vi.length > parseInt(limit)) {
+                Tao_The_Hien_Phan_trang(Danh_sach_Ti_vi, limit, Th_Phan_trang)
+                Tao_The_Hien_Phan_trang(Danh_sach_Ti_vi, limit, Th_Phan_trang_B)
+            }
+        }
+        else {
+            Th_Thong_bao.innerHTML = "Lỗi đọc dữ liệu"
+        }
+
+        function Xuat_Danh_sach(Danh_sach_Ti_vi, Th_Thong_bao) {
+            Th_Cha.innerHTML = ""
+            Danh_sach_Ti_vi.forEach(Ti_vi => {
+                var The_hien = Tao_The_hien_Ti_vi(Ti_vi, Th_Cha)
+                The_hien.childNodes[0].onclick = () => {
+                    The_hien.childNodes[0].classList.toggle("CHON")
+                    var Ti_vi = The_hien.childNodes[0].parentNode.getAttribute("data")
+                    sessionStorage.setItem("giohang", Ti_vi)
+                    window.location = "MH_Gio_hang.html"
+                }
+                The_hien.childNodes[1].onclick = () => {
+                    var Ti_vi_Chon = JSON.parse(The_hien.childNodes[1].parentNode.getAttribute("data"))
+                    var noi_dung_HTML = `
+                        <div class="card-deck text-center>
+                            <div>
+                                <h4 class="modal-title"></h4>
+                                <img class="card-img-top " src="http://localhost:1001/${Ti_vi.Ma_so}.png" alt=""/>
+                                <div class="card-body text-center">
+                                    <p class="card-title text-primary">${Ti_vi.Ten}</p>
+                                    <p class="card-text text-danger">Giá Bán: ${Tao_Chuoi_The_hien_So_nguyen_duong(Ti_vi.Don_gia_Ban)} đ</p>
+                                    Loại nhóm: ${Ti_vi.Nhom_Tivi.Ten}   
+                                </div>
+                            </div>
+                        </div>`
+                    Th_Chi_tiet.innerHTML = noi_dung_HTML
+                    Th_Show.click()
+                }
+
+
+            });
+            Th_Thong_bao.innerHTML = `<h7>Danh sách TiVi (${Danh_sach_Ti_vi.length}) </h7>`
+        }
+
+        // Phân trang
+        function Tao_The_Hien_Phan_trang(Danh_sach, So_san_pham_cho_mot_trang, Th_Cha) {
+            var Tong_so_san_pham = Danh_sach.length
+            var Tong_trang = (Tong_so_san_pham % So_san_pham_cho_mot_trang == 0) ? Tong_so_san_pham / So_san_pham_cho_mot_trang : parseInt(Tong_so_san_pham / So_san_pham_cho_mot_trang) + 1
+            var noi_dung_HTML = `<nav aria-label="Page navigation example">`
+            noi_dung_HTML += `
+            <ul class="pagination justify-content-center">
+            `
+            for (var i = 1; i <= Tong_trang; i++) {
+                var vt = (i - 1) * So_san_pham_cho_mot_trang
+                noi_dung_HTML += `<li class="page-item"><a class="page-link" href="javaScript:void(0)" onclick="Xuat_Danh_sach_Phan_trang(Danh_sach_Ti_vi, Th_Thong_bao,${vt} ,${limit})" >${i}</a></li>`
+            }
+            noi_dung_HTML += `
+            </ul>
+            </nav>
+            `
+            Th_Cha.innerHTML = noi_dung_HTML
+        }
+
+        function Xuat_Danh_sach_Phan_trang(Danh_sach_Ti_vi, Th_Thong_bao, vt, limit) {
+            Th_Cha.innerHTML = ""
+            var dem = 0
+            Danh_sach_Ti_vi.forEach((Ti_vi, index) => {
+                var The_hien = Tao_The_hien_Ti_vi(Ti_vi, Th_Cha)
+                if (index >= vt && dem < limit) {
+                    The_hien.childNodes[0].onclick = () => {
+                        var Ti_vi = The_hien.childNodes[0].parentNode.getAttribute("data")
+                        sessionStorage.setItem("giohang", Ti_vi)
+                        window.location = "MH_Gio_hang.html"
+                    }
+                    The_hien.childNodes[1].onclick = () => {
+                        var Ti_vi_Chon = JSON.parse(The_hien.childNodes[1].parentNode.getAttribute("data"))
+                        var noi_dung_HTML = `
+                        <div class="card text-center>
+                            <div>
+                                <h4 class="modal-title"></h4>
+                                <img class="card-img-top " src="http://localhost:1001/${Ti_vi.Ma_so}.png" alt=""/>
+                                <div class="card-body text-center">
+                                    <p class="card-title text-primary">${Ti_vi.Ten}</p>
+                                    <p class="card-text text-danger">Giá Bán: ${Tao_Chuoi_The_hien_So_nguyen_duong(Ti_vi.Don_gia_Ban)} đ</p>
+                                    Loại nhóm: ${Ti_vi.Nhom_Tivi.Ten}   
+                                </div>
+                            </div>
+                        </div>`
+                        Th_Chi_tiet.innerHTML = noi_dung_HTML
+                        Th_Show.click()
+                    }
+                    dem++
+                } else {
+                    The_hien.style.cssText = "display:none"
+                }
+
+            });
+            Th_Thong_bao.innerHTML = `<h7>Danh sách TiVi (${Danh_sach_Ti_vi.length}) </h7>`
+        }
+        // Kết thúc Phân trang
+
+        function Xuat_Ti_vi_theo_Don_gia(chuoi_dieu_kien) {
+            var Thanh_phan_con = chuoi_dieu_kien.split('-')
+            if (Thanh_phan_con.length > 0) {
+
+                var Xuat_Ti_vi_theo_Don_gia = Danh_sach_Ti_vi.filter(x => x.Don_gia_Ban >= Thanh_phan_con[0] && x.Don_gia_Ban <= Thanh_phan_con[1])
+                Xuat_Danh_sach_Phan_trang(Xuat_Ti_vi_theo_Don_gia, Th_Thong_bao, 0, limit)
+                Tao_The_Hien_Phan_trang(Xuat_Ti_vi_theo_Don_gia, limit, Th_Phan_trang)
+                Tao_The_Hien_Phan_trang(Xuat_Ti_vi_theo_Don_gia, limit, Th_Phan_trang_B)
+            }
+        }
+
+        //Hàm sắp xếp tăng
+        function Sap_Tang() {
+            Danh_sach_Ti_vi.sort((a, b) => a.Ten.localeCompare(b.Ten))
+            Xuat_Danh_sach_Phan_trang(Danh_sach_Ti_vi, Th_Thong_bao, 0, limit)
+            Tao_The_Hien_Phan_trang(Danh_sach_Ti_vi, limit, Th_Phan_trang)
+            Tao_The_Hien_Phan_trang(Danh_sach_Ti_vi, limit, Th_Phan_trang_B)
+        }
+
+        //Hàm sắp xếp giảm
+        function Sap_Giam() {
+            Danh_sach_Ti_vi.sort((a, b) => b.Ten.localeCompare(a.Ten))
+            Xuat_Danh_sach_Phan_trang(Danh_sach_Ti_vi, Th_Thong_bao, 0, limit)
+            Tao_The_Hien_Phan_trang(Danh_sach_Ti_vi, limit, Th_Phan_trang)
+            Tao_The_Hien_Phan_trang(Danh_sach_Ti_vi, limit, Th_Phan_trang_B)
+        }
+
+        // Lọc tất cả sp
+        Th_Trang_chu.onclick = () => {
+            Xuat_Danh_sach_Phan_trang(Danh_sach_Ti_vi, Th_Thong_bao, 0, limit)
+            Tao_The_Hien_Phan_trang(Danh_sach_Ti_vi, limit, Th_Phan_trang)
+            Tao_The_Hien_Phan_trang(Danh_sach_Ti_vi, limit, Th_Phan_trang_B)
+        }
+
+        // Lọc theo loại Samsung
+        Th_Samsung.onclick = () => {
+            var Danh_sach_Ti_vi_theo_Nhom = Danh_sach_Ti_vi.filter(x => x.Nhom_Tivi.Ma_so == "SAMSUNG")
+            // Xuat_Danh_sach(Danh_sach_Ti_vi_theo_Nhom, Th_Thong_bao)
+            Xuat_Danh_sach_Phan_trang(Danh_sach_Ti_vi_theo_Nhom, Th_Thong_bao, 0, limit)
+            Tao_The_Hien_Phan_trang(Danh_sach_Ti_vi_theo_Nhom, limit, Th_Phan_trang)
+            Tao_The_Hien_Phan_trang(Danh_sach_Ti_vi_theo_Nhom, limit, Th_Phan_trang_B)
+        }
+
+        // Lọc theo loại Sony
+        Th_Sony.onclick = () => {
+            var Danh_sach_Ti_vi_theo_Nhom = Danh_sach_Ti_vi.filter(x => x.Nhom_Tivi.Ma_so == "SONY")
+            Xuat_Danh_sach_Phan_trang(Danh_sach_Ti_vi_theo_Nhom, Th_Thong_bao, 0, limit)
+            Tao_The_Hien_Phan_trang(Danh_sach_Ti_vi_theo_Nhom, limit, Th_Phan_trang)
+            Tao_The_Hien_Phan_trang(Danh_sach_Ti_vi_theo_Nhom, limit, Th_Phan_trang_B)
+        }
+
+        // Lọc theo loại LG
+        Th_LG.onclick = () => {
+            var Danh_sach_Ti_vi_theo_Nhom = Danh_sach_Ti_vi.filter(x => x.Nhom_Tivi.Ma_so == "LG")
+            Xuat_Danh_sach_Phan_trang(Danh_sach_Ti_vi_theo_Nhom, Th_Thong_bao, 0, limit)
+            Tao_The_Hien_Phan_trang(Danh_sach_Ti_vi_theo_Nhom, limit, Th_Phan_trang)
+            Tao_The_Hien_Phan_trang(Danh_sach_Ti_vi_theo_Nhom, limit, Th_Phan_trang_B)
+        }
+
+        // Lọc theo loại KHÁC
+        Th_Khac.onclick = () => {
+            var Danh_sach_Ti_vi_theo_Nhom = Danh_sach_Ti_vi.filter(x => x.Nhom_Tivi.Ma_so == "KHAC")
+            Xuat_Danh_sach_Phan_trang(Danh_sach_Ti_vi_theo_Nhom, Th_Thong_bao, 0, limit)
+            Tao_The_Hien_Phan_trang(Danh_sach_Ti_vi_theo_Nhom, limit, Th_Phan_trang)
+            Tao_The_Hien_Phan_trang(Danh_sach_Ti_vi_theo_Nhom, limit, Th_Phan_trang_B)
+        }
+
+        // Tìm kiếm
+        Th_Tim.onclick = () => {
+            var gtTim = Th_Gia_tri_Tim.value
+            var Danh_sach_Ti_vi_tim = Danh_sach_Ti_vi.filter(x => x.Ten.toLowerCase().includes(gtTim.toLowerCase()))
+            Xuat_Danh_sach_Phan_trang(Danh_sach_Ti_vi_tim, Th_Thong_bao, 0, limit)
+            Tao_The_Hien_Phan_trang(Danh_sach_Ti_vi_tim, limit, Th_Phan_trang)
+            Tao_The_Hien_Phan_trang(Danh_sach_Ti_vi_tim, limit, Th_Phan_trang_B)
+            Th_Gia_tri_Tim.value = ""
+        }
+        // Tìm kiếm
+        function KeyCode(event) {
+            if (event.keyCode == 13) {
+                var gtTim = event.target.value
+                var Danh_sach_Ti_vi_tim = Danh_sach_Ti_vi.filter(x => x.Ten.toLowerCase().includes(gtTim.toLowerCase()))
+                Xuat_Danh_sach_Phan_trang(Danh_sach_Ti_vi_tim, Th_Thong_bao, 0, limit)
+                Tao_The_Hien_Phan_trang(Danh_sach_Ti_vi_tim, limit, Th_Phan_trang)
+                Tao_The_Hien_Phan_trang(Danh_sach_Ti_vi_tim, limit, Th_Phan_trang_B)
+            }
+        }
+
+        //Tải đơn
+        Th_Tai_don.onclick = () => {
+            var tap_tin = "Don_Du_tuyen.pdf"
+            var ten_moi = "Don_Du_tuyen_2018.pdf"
+            Tai_don(tap_tin, ten_moi)
+        }
+
+        //Nộp đơn
+        Th_Nop_don.onclick = () => {
+            Tao_the_hien_Upload(Th_Chi_tiet)
+            modelId.setAttribute("data-keyboard", false)
+            modelId.setAttribute("data-backdrop", "static")
+            modelTitleId.innerHTML = "Nộp Đơn Dự Tuyển"
+            Th_Show.click()
+        }
+
+        //Liên Hệ
+        Th_Lien_he.onclick = () => {
+            window.location = "../Khach_hang/MH_Lien_he.html"
+        }
+        // Địa điểm công ty
+        Th_Dia_diem.onclick = () => {
+
+
+            modelId.childNodes[1].setAttribute("style", "max-width:60rem")
+
+            Th_Chi_tiet.style.height = "30rem"
+
+            Hien_thi_vi_tri_Cong_ty(Cong_ty)
+            Th_Show.click()
+        }
+
+        function Hien_thi_vi_tri_Cong_ty(Cong_ty) {
+
+            modelTitleId.innerHTML = `${Cong_ty.Ten} - ${Cong_ty.Dien_thoai} `
+            geocoder.geocode({
+                'address': Cong_ty.Dia_chi
+            }, function (results, status) {
+                if (status == google.maps.GeocoderStatus.OK) {
+                    map.setCenter(results[0].geometry.location);
+                    var marker = new google.maps.Marker({
+                        map: map,
+                        position: results[0].geometry.location,
+                        title: `${Cong_ty.Ten} - ${Cong_ty.Dien_thoai} `
+                    });
+
+                    if (results[0].formatted_address) {
+                        region = results[0].formatted_address + '<br />';
+                    }
+                    var infowindow = new google.maps.InfoWindow({
+                        content: '<div style =width:500px; height:400px;><h5>' + Cong_ty.Ten + '</h5><br/>Địa chỉ:' + region + '<br/>LatLng:' + results[0].geometry.location + '</div>'
+                    });
+                    infowindow.open(map, marker);
+                    google.maps.event.addListener(marker, 'click', function () {
+                        // Calling the open method of the infoWindow 
+                        infowindow.open(map, marker);
+                    });
+                } else {
+                    alert("Geocode was not successful for the following reason: " + status);
+                }
+            });
+            Khoi_tao_Ban_do()
+        }
+
+        function Khoi_tao_Ban_do() {
+
+            var latlng = new google.maps.LatLng(10.823099, 106.629664); // Vĩ độ, Kinh độ Tp Hồ Chí Minh
+            var myOptions = {
+                zoom: 16,
+                center: latlng,
+                mapTypeId: google.maps.MapTypeId.ROADMAP,
+                disableDefaultUI: true
+            };
+            map = new google.maps.Map(Th_Chi_tiet, myOptions);
+        }
+
+    </script>
+</body>
+
+</html>

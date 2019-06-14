@@ -1,0 +1,17 @@
+{
+  "name": "dich_vu_du_lieu",
+  "version": "1.0.0",
+  "description": "Dịch vụ dữ liệu",
+  "main": "index.js",
+  "scripts": {
+    "start": "node ./Dich_vu/DV_DU_LIEU.js"
+  },
+  "keywords": [
+    "12345"
+  ],
+  "author": "ankhang",
+  "license": "ISC",
+  "dependencies": {
+    "mongodb": "^3.1.6"
+  }
+}

@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>Liên hệ</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css" integrity="sha384-Smlep5jCw/wG7hdkwQ/Z5nLIefveQRIY9nfy6xoR1uRYBtpZgI6339F5dgvm/e9B"
+        crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body>
+    <div class="container-fluid">
+        <div class="container" id="Th_PET">
+
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12 col-sm-offset-3">
+                    <h2>Liên hệ</h2>
+                    <form role="form" id="contactForm">
+                        <div class="row">
+                            <div class="form-group col-sm-6">
+                                <label for="name" class="h4">Tên</label>
+                                <input type="text" class="form-control" id="Th_Ho_ten" placeholder="Enter name"
+                                    required>
+                            </div>
+                            <div class="form-group col-sm-6">
+                                <label for="email" class="h4">Email</label>
+                                <input type="email" class="form-control" id="Th_Email" placeholder="Enter email"
+                                    required>
+                            </div>
+                            <div class="form-group col-sm-6">
+                                <label for="tieu_de" class="h4">Tiêu đề</label>
+                                <input type="text" class="form-control" id="Th_Tieu_de" placeholder="Nhập Tiêu Đề"
+                                    required>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="noi_dung" class="h4">Nội Dung</label>
+                            <textarea id="Th_Noi_dung" class="form-control" rows="5" required></textarea>
+                        </div>
+                        <div class="text-center">
+                            <button type="submit" id="Th_Dong_y" class="btn btn-success btn-lg">Đồng ý</button>
+                            <button type="submit" id="Th_Quay_lai" class="btn btn-success btn-lg">Quay lại</button>
+                        </div>
+                        <div id="Th_Thanh_cong" class="h3 text-center hidden"></div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <!-- Optional JavaScript -->
+        <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+            crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+            crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/js/bootstrap.min.js" integrity="sha384-o+RDsa0aLu++PJvFqy8fFScvbHFLtbvScb8AjopnFD+iEQ7wo/CG0xlczd+2O/em"
+            crossorigin="anonymous"></script>
+        <script src="../ckeditor/ckeditor.js"></script>
+        <script src="../Xu_ly/Xu_ly_3L.js"></script>
+
+</body>
+
+<script>
+    var Th_Chi_tiet_Editor = CKEDITOR.replace('Th_Noi_dung', {
+        customConfig: 'conf_Tom_tat.js'
+    })
+    var Du_lieu = Doc_Danh_sach_Ti_vi();
+    var Cong_ty = Du_lieu.Cong_ty
+    Xuat_Thong_tin_Cong_ty(Cong_ty, Th_PET)
+
+    Th_Dong_y.onclick = () => {
+        var ho_ten = Th_Ho_ten.value
+        var email = Th_Email.value
+        var tieu_de = Th_Tieu_de.value
+        var noi_dung = CKEDITOR.instances.Th_Noi_dung.getData();
+        var Chuoi_HTML = `<h1>Họ tên:${ho_ten} - Email:${email}</h1>`
+        Chuoi_HTML += `--------------------------------`
+        Chuoi_HTML += `<h4>${tieu_de}</h4>`
+        Chuoi_HTML += `--------------------------------`
+        Chuoi_HTML += `${noi_dung}`
+        if (Chuoi_HTML != "") {
+            console.log(Chuoi_HTML)
+            var Kq = Goi_Thong_tin_Lien_he(Chuoi_HTML)
+            alert("Gửi mail thành công")
+        }
+        else {
+            alert("Vui lòng nhập lại")
+        }
+    }
+    Th_Quay_lai.onclick = () => {
+        window.location = "../Khach_hang/MH_Chinh.html"
+    }
+</script>
+
+</html>

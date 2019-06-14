@@ -1,0 +1,85 @@
+{
+  "Ten": "Cửa hàng Tivi An Khang",
+  "Ma_so": "PET",
+  "Dien_thoai": "028-38351056",
+  "Dia_chi": "137E Nguyễn Chí Thanh, P9, Q5, TPHCM",
+  "Mail": "tiviankhang@gmail.com",
+  "Danh_sach_Nhom_Tivi": [
+    {
+      "Ten": "Sony",
+      "Ma_so": "SONY"
+    },
+    {
+      "Ten": "LG",
+      "Ma_so": "LG"
+    },
+    {
+      "Ten": "Khác",
+      "Ma_so": "KHAC"
+    },
+    {
+      "Ten": "Samsung",
+      "Ma_so": "SAMSUNG"
+    }
+  ],
+  "Danh_sach_Quan_ly_Cong_ty":[  {
+      "Ho_ten": "Nguyễn Huy Khang",
+      "Ma_so": "NV_1",
+      "Ten_dang_nhap": "QL",
+      "Mat_khau": "QL"
+    }
+  ]
+ ,
+  "Danh_sach_Quan_ly_Ban_hang": [{
+    "Ho_ten": "Mai Khiết Liêm",
+    "Ma_so": "NV_2",
+    "Ten_dang_nhap": "QL_2",
+    "Mat_khau": "QL_2"
+  }],
+  "Danh_sach_Quan_ly_Nhap_hang": [{
+    "Ho_ten": "Hoàng Khánh Hòa",
+    "Ma_so": "NV_3",
+    "Ten_dang_nhap": "NV_3",
+    "Mat_khau": "NV_3"   
+  }],
+  "Danh_sach_Nhan_vien_Nhap_hang":[ {
+    "Ho_ten": "Nguyễn Thị Phương",
+    "Ma_so": "NV_4",
+    "Ten_dang_nhap": "NV_4",
+    "Mat_khau": "NV_4"
+  }],
+  "Danh_sach_Nhan_vien_Ban_hang": [
+    {
+      "Ho_ten": "Tô thị bé Bé",
+      "Ma_so": "NV_2",
+      "Ten_dang_nhap": "NV_2",
+      "Mat_khau": "NV_2",
+      "Danh_sach_Nhom_Tivi": [
+        {
+          "Ten": "Sony",
+          "Ma_so": "SONY"
+        },
+        {
+          "Ten": "LG",
+          "Ma_so": "LG"
+        }
+      ]
+    },
+    {
+      "Ho_ten": "Nguyên văn bé Xíu",
+      "Ma_so": "NV_3",
+      "Ten_dang_nhap": "NV_3",
+      "Mat_khau": "NV_3",
+      "Danh_sach_Nhom_Tivi": [
+        {
+          "Ten": "Samsung",
+          "Ma_so": "SAMSUNG"
+        },
+        {
+          "Ten": "Khác",
+          "Ma_so": "KHAC"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,228 @@
+<script>
+    if (!sessionStorage.getItem("giohang")) {
+        window.location = 'MH_Chinh.html'
+    }
+    else {
+        var Ti_vi = JSON.parse(sessionStorage.getItem("giohang"))
+    }
+</script>
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>Giỏ hàng Tivi Của Bạn</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+        crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<style>
+    label {
+        font-weight: bold;
+
+    }
+
+    input[type="text"] {
+        width: 30rem;
+        border: none;
+        border-bottom: 1px solid #f63
+    }
+</style>
+
+<body>
+    <div class="container-fluid">
+        <div class="container" id="Th_PET">
+
+        </div>
+
+        <div class="container">
+            <div class="btn btn-outline-danger btn-block" id="Th_Thong_bao">
+                GIỎ HÀNG CỦA BẠN
+            </div>
+        </div>
+        <div class="container">
+            <div class="row" id="Th_Cha">
+                <div class="col-md-12 col-sm-12 col-xm-12 text-center">
+                    <table class="table table-responsive-sm">
+                        <thead class="thead-inverse|thead-default">
+                            <tr>
+                                <th>Hình </th>
+                                <th>Tên </th>
+                                <th>Nhóm Tivi</th>
+                                <th>Số lượng</th>
+                                <th>Đơn giá Bán</th>
+                            </tr>
+                        </thead>
+                        <tbody id="Th_Ti_vi_Mua">
+
+                        </tbody>
+                    </table>
+                </div>
+                <div class="col-md-3 col-sm-3 col-xm-3"></div>
+                <div class="col-md-6 col-sm-6 col-xm-6">
+                    <div class="float-right ml-5 text-center">
+                        <div class="clearfix">
+                            <h3 class="text-info">THÔNG TIN GIAO HÀNG</h3>
+                            <form>
+                                <div class="form-group">
+                                    <label for="Th_Ho_ten">Họ tên: </label>
+                                    <input type="text" class="form-control" id="Th_Ho_ten">
+                                </div>
+                                <div class="form-group">
+                                    <label for="Th_Email">Email: </label>
+                                    <input type="text" class="form-control" id="Th_Email">
+                                </div>
+                                <div class="form-group">
+                                    <label for="Th_Ti_vi">Tivi: </label>
+                                    <input type="text" class="form-control" id="Th_Ti_vi">
+                                </div>
+                                <div class="form-group">
+                                    <label for="Th_Dia_chi">Địa chỉ Giao hàng:</label>
+                                    <input type="text" class="form-control" id="Th_Dia_chi">
+                                </div>
+                                <div class="form-group">
+                                    <label for="Th_Ngay_Giao_hang">Ngày Giao hàng:</label>
+                                    <input type="date" class="form-control" id="Th_Ngay_Giao_hang">
+                                </div>
+
+                            </form>
+
+                            <div class="container btn text-center" id="Th_Chuc_nang">
+                                <button type="button" class="btn btn-success" id="Th_Dong_y">
+                                    Đồng ý
+                                </button>
+                                <button type="button" class="btn btn-danger" onclick="window.location='MH_Chinh.html'">
+                                    Bỏ qua
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-3 col-xm-3"></div>
+            </div>
+
+        </div>
+    </div>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+    <script src="../Xu_ly/Xu_ly_3L.js"></script>
+    <script>
+        var Du_lieu = Doc_Danh_sach_Ti_vi();
+        var Cong_ty = Du_lieu.Cong_ty
+        Xuat_Thong_tin_Cong_ty(Cong_ty, Th_PET)
+        Xuat_Ti_vi_Mua(Th_Ti_vi_Mua)
+        function Xuat_Ti_vi_Mua(Th_Cha) {
+            Th_Cha.innerHTML = ""
+            var noi_dung_HTML = `
+            <tr>
+                <td scope="row">
+                    <img src=http://localhost:1001/${Ti_vi.Ma_so}.png style="width:80px" />
+                </td >
+                <td>${Ti_vi.Ten}</td>
+                <td>${Ti_vi.Nhom_Tivi.Ma_so}</td>
+                <td>
+                    <input type="number" min="1" max="10" id="Th_So_luong" value="1" class="text-right" />
+                </td>
+                <td>${Tao_Chuoi_The_hien_So_nguyen_duong(Ti_vi.Don_gia_Ban)} đ</td>
+            </tr >
+            `
+
+            Th_Cha.innerHTML = noi_dung_HTML
+        }
+        function Xuat_Thong_tin_Dat_hang_Thanh_cong(Th_Cha, Phieu_Dat) {
+            var noi_dung_HTML = `
+            <table class="table" >
+                    <thead>
+                        <tr>
+                            <th>Hình </th>
+                            <th>Tên </th>
+                            <th>Nhóm Điện thoại</th>
+                            <th>Số lượng</th>
+                            <th>Đơn giá Bán</th>
+                        </tr>
+                    </thead>
+            `
+            noi_dung_HTML += `
+            <tbody>
+            <tr>
+                <td scope="row">
+                    <img src=http://localhost:1001/${Ti_vi.Ma_so}.png style="width:80px" />
+                </td >
+                <td>${Ti_vi.Ten}</td>
+                <td>${Ti_vi.Nhom_Tivi.Ma_so}</td>
+                <td>
+                    ${Phieu_Dat.So_luong}
+                </td>
+                <td>${Tao_Chuoi_The_hien_So_nguyen_duong(Ti_vi.Don_gia_Ban)} đ</td>
+            </tr >
+            `
+            noi_dung_HTML += `
+            <tr>
+                <td colspan="5" class="text-right text-danger"><strong>Tổng thành tiền:${Tao_Chuoi_The_hien_So_nguyen_duong(Phieu_Dat.So_luong * Phieu_Dat.Don_gia_Ban)} đ </strong></td>
+            </tr>
+            <tr>
+                <td colspan="5"><h4 class="text-info">Chào Quí khách: ${Phieu_Dat.Khach_hang.Ho_ten}<br>
+                Nhân viên Chúng tôi sẽ giao hàng theo địa chỉ: ${Phieu_Dat.Khach_hang.Dia_chi}<br>
+                Liên hệ quí khách qua số điện thoại: ${Phieu_Dat.Khach_hang.Dien_thoai}<br>
+                Email: ${Phieu_Dat.Khach_hang.Email}
+                </h4>     
+                </td>
+            </tr>
+            <tr>
+                <td colspan="5" class="text-center"><button class="btn btn-primary" onclick="window.location='MH_Chinh.html'" >Xác nhận</button></td>
+            </tr>    
+            
+            </tbody>
+            </table>
+            `
+            Th_Cha.innerHTML = noi_dung_HTML
+        }
+
+
+
+
+        Th_Dong_y.onclick = () => {
+
+            var Phieu_Dat = {
+                "Ngay_Dat_hang": new Date(),
+                "Ngay_Giao_hang": new Date(),
+                "So_luong": Th_So_luong.value,
+                "Don_gia_Ban": Ti_vi.Don_gia_Ban,
+                "Tien": (Ti_vi.Don_gia_Ban * Th_So_luong.value),
+                "Trang_thai": "CHUA_GIAO_HANG",
+                "Khach_hang": {
+                    "Ho_ten": Th_Ho_ten.value,
+                    "Dien_thoai": Th_Ti_vi.value,
+                    "Email": Th_Email.value,
+                    "Dia_chi": Th_Dia_chi.value
+                }
+            }
+
+            var Kq = Ghi_Phieu_Dat_hang(Ti_vi, Phieu_Dat)
+
+            console.log(Kq)
+            if (Kq == "OK") {
+                Th_Thong_bao.innerHTML = "<strong>Cám ơn Quí khách đã mua hàng. Xác nhận Đơn hàng</strong>"
+                Th_Chuc_nang.style.display = "none"
+
+                Xuat_Thong_tin_Dat_hang_Thanh_cong(Th_Cha, Phieu_Dat)
+                sessionStorage.removeItem("giohang")
+            }
+        }
+
+
+
+    </script>
+</body>
+
+</html>
